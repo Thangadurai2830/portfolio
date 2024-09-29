@@ -23,7 +23,7 @@
 
   /* gradient */
 
-  --bg-gradient-onyx: linear-gradient(
+  /* --bg-gradient-onyx: linear-gradient(
     to bottom right, 
     hsl(240, 1%, 25%) 3%, 
     hsl(0, 0%, 19%) 97%
@@ -52,11 +52,11 @@
     to right, 
     hsl(45, 100%, 72%), 
     hsl(35, 100%, 68%)
-  );
+  ); */
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
+  /* --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
   --eerie-black-2: hsl(240, 2%, 12%);
@@ -67,7 +67,62 @@
   --vegas-gold: hsl(45, 54%, 58%);
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --bittersweet-shimmer: hsl(0, 43%, 51%); */
+
+
+  /* Modified colors */
+
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right, 
+    hsl(220, 50%, 35%) 3%,  /* Dark Blue */
+    hsl(220, 50%, 20%) 97%  /* Very Dark Blue */
+);
+
+--bg-gradient-jet: linear-gradient(
+    to bottom right, 
+    hsla(220, 50%, 25%, 0.251) 0%, /* Semi-transparent Blue */
+    hsla(220, 50%, 15%, 0) 100%   /* Transparent Dark Blue */
+), hsl(220, 50%, 18%); /* Solid Dark Blue */
+
+--bg-gradient-yellow-1: linear-gradient(
+    to bottom right, 
+    hsl(195, 100%, 55%) 0%, /* Cyan Blue */
+    hsla(195, 100%, 55%, 0) 50% /* Transparent Cyan */
+);
+
+--bg-gradient-yellow-2: linear-gradient(
+    135deg, 
+    hsla(195, 100%, 55%, 0.251) 0%, /* Semi-transparent Cyan */
+    hsla(200, 100%, 55%, 0) 59.86% /* Transparent Blue */
+), hsl(220, 50%, 18%); /* Dark Blue */
+
+--border-gradient-onyx: linear-gradient(
+    to bottom right, 
+    hsl(220, 50%, 35%) 0%,  /* Dark Blue */
+    hsla(220, 50%, 35%, 0) 50%  /* Transparent Dark Blue */
+);
+
+--text-gradient-yellow: linear-gradient(
+    to right, 
+    hsl(195, 100%, 65%), /* Bright Cyan */
+    hsl(210, 100%, 60%)  /* Light Blue */
+);
+
+/* solid */
+
+--jet: hsl(220, 50%, 30%);  /* Medium Dark Blue */
+--onyx: hsl(220, 50%, 25%);  /* Dark Blue */
+--eerie-black-1: hsl(220, 50%, 18%);  /* Darker Blue */
+--eerie-black-2: hsl(220, 50%, 15%);  /* Very Dark Blue */
+--smoky-black: hsl(220, 50%, 10%);  /* Almost Black Blue */
+--white-1: hsl(0, 0%, 100%);  /* White */
+--white-2: hsl(0, 0%, 98%);  /* Off White */
+--orange-yellow-crayola: hsl(195, 100%, 65%);  /* Bright Cyan */
+--vegas-gold: hsl(210, 100%, 60%);  /* Light Blue */
+--light-gray: hsl(0, 0%, 84%);  /* Light Gray */
+--light-gray-70: hsla(0, 0%, 84%, 0.7);  /* Transparent Light Gray */
+--bittersweet-shimmer: hsl(0, 43%, 51%);  /* Optional Accent Color (can stay) */
+
 
   /**
    * typography
@@ -582,6 +637,7 @@ main {
   min-width: 100%;
   scroll-snap-align: center;
 }
+
 
 .testimonials-avatar-box {
   position: absolute;
@@ -1441,6 +1497,16 @@ textarea.form-input::-webkit-resizer { display: none; }
   .content-card {
     padding: 30px;
     padding-top: 25px;
+    scroll-snap-align: center;
+    border: 2px solid currentColor; /* Border color matches the text or parent */
+    border-radius: 10px;
+    color: hsl(220, 20%, 40%); /* Default text and border color */
+    transition: border-color 0.4s ease-in-out; /* Smooth transition for border color */
+  }
+
+  
+  .content-card:hover {
+    border-color: hsl(195, 100%, 65%); /* Change to bright color on hover */
   }
 
   .testimonials-avatar-box {
